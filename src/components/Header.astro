@@ -1,0 +1,53 @@
+---
+const year = new Date().getFullYear();
+---
+<div class="w-screen h-screen flex justify-center items-center relative overflow-hidden">
+    <div class="float">
+        <a href="https://github.com/n1kkl" target="_blank">
+            <h1 class="text-9xl font-black tracking-widest select-none title" data-aos="zoom-in-up">
+                nikkl
+            </h1>
+        </a>
+    </div>
+    <div class="year text-3xl font-black absolute top-[80px] -right-12 -rotate-90">
+        {year} // AT
+    </div>
+</div>
+
+<style lang="scss" type="text/scss">
+  @keyframes float {
+    $degrees: 2deg;
+
+    0% {
+      transform: rotateZ(-$degrees);
+    }
+    50% {
+      transform: rotateZ($degrees);
+    }
+    100% {
+      transform: rotateZ(-$degrees);
+    }
+  }
+
+  .float {
+    animation-name: float;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    .title {
+      color: rgb(255, 255, 255);
+      -webkit-text-stroke: 2px #fff;
+      transition: color .5s ease-in-out;
+
+      &:hover {
+        color: rgb(16, 16, 16);
+      }
+    }
+  }
+
+  .year {
+    color: rgb(16, 16, 16);
+    -webkit-text-stroke: .5px #fff;
+  }
+</style>
